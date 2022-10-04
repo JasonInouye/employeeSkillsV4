@@ -1,0 +1,21 @@
+<mvc:View
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<l:Grid
+		class="sapUiSmallMarginTop"
+		hSpacing="2"
+		defaultSpan="L6 M6 S10">
+		<l:content>
+			<Image src="https://www.samatters.com/wp-content/uploads/2015/08/goalsetting.jpg" width="300%">
+				<layoutData>
+					<l:GridData
+						span="L3 M3 S8"
+						linebreakL="true"
+						linebreakM="true"
+						linebreakS="true" />
+				</layoutData>
+			</Image>
+		</l:content>
+	</l:Grid>
+</mvc:View>

@@ -1,0 +1,32 @@
+<mvc:View
+	controllerName="employeeSkillsV4.empskillsv4.controller.EmployeeDetails"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="{i18n>ResumeOf} {FirstName} {LastName}"
+		id="employeeDetailsPage"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+		<content>
+			<IconTabBar
+				id="iconTabBar"
+				headerBackgroundDesign="Transparent"
+				class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
+						<mvc:XMLView viewName="employeeSkillsV4.empskillsv4.view.Info"></mvc:XMLView>
+					</IconTabFilter>
+					<IconTabFilter id="skillsTab" text="{i18n>tabSkills}" key="Skills">
+						<mvc:XMLView viewName="employeeSkillsV4.empskillsv4.view.Skills"></mvc:XMLView>
+					</IconTabFilter>
+					<IconTabFilter id="projectsTab" text="{i18n>tabProjects}" key="Projects">
+						<mvc:XMLView viewName="employeeSkillsV4.empskillsv4.view.Projects"></mvc:XMLView>
+					</IconTabFilter>
+					<IconTabFilter id="goalsTab" text="{i18n>tabGoals}" key="Goals">
+						<mvc:XMLView viewName="employeeSkillsV4.empskillsv4.view.Goals"></mvc:XMLView>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

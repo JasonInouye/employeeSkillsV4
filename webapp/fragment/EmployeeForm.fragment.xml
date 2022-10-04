@@ -1,0 +1,68 @@
+<core:FragmentDefinition 
+xmlns="sap.m" 
+xmlns:l="sap.ui.layout" 
+xmlns:layout="sap.ui.layout" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:f="sap.ui.layout.form" 
+xmlns:core="sap.ui.core">
+
+<Dialog id="employeeForm">
+
+<l:VerticalLayout class="sapUiSmallMargin">
+    <f:SimpleForm id="SimpleFormToolbar">
+        <f:toolbar>
+            <Toolbar id="TB1">
+                <Title id="Title1" text="New Employee" />
+            </Toolbar>
+        </f:toolbar>
+        <!-- TODO: if time: validation  -->
+        <f:content>
+            <layout:HorizontalLayout>
+                <layout:VerticalLayout>
+                    <Label text="First Name" />
+                    <Input id="FirstName" />
+
+                    <Label text="Last Name" />
+                    <Input id="LastName" />
+
+                    <Label text="Title" />
+                    <Input id="Title" />
+
+                    <Label text="Department" />
+                    <Input id="Department" />
+
+                    <Label text="Email" />
+                    <Input id="Email" />
+                </layout:VerticalLayout>
+            </layout:HorizontalLayout>
+            <layout:HorizontalLayout>
+                <layout:VerticalLayout>
+                    <Label text="Address" />
+                    <Input id="Address" />
+                    
+                    <Label text="City" />
+                    <Input id="City" />
+
+                    <Label text="State" />
+                    <Input id="State" />
+
+                    <Label text="Country" />
+                    <Input id="Country" />
+
+                    <Label text="Zipcode" />
+                    <Input id="Zipcode" />
+                
+                </layout:VerticalLayout>
+            </layout:HorizontalLayout>
+            <Button text="Save" press=".onSave" />
+            <ToolbarSpacer />
+            <Button text="Close" press=".closeEmployeeDialog" />
+
+        </f:content>
+    </f:SimpleForm>
+</l:VerticalLayout>
+
+
+</Dialog>
+
+</core:FragmentDefinition>

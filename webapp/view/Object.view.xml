@@ -1,0 +1,70 @@
+<mvc:View
+    controllerName="employeeSkillsV4.empskillsv4.controller.Object"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:semantic="sap.f.semantic"
+    busyIndicatorDelay="0"
+    >
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false"
+        busy="{objectView>/busy}"
+        busyIndicatorDelay="{objectView>/delay}"
+        showNavButton="true">
+
+        <semantic:titleHeading>
+            <Toolbar>
+				<Button type="Back" press=".onNavBack" />
+				<ToolbarSpacer/>
+				<Title text="{i18n>worklistTitle}" level="H2"/>
+			</Toolbar>
+        </semantic:titleHeading>
+
+        <semantic:headerContent>
+            <Panel
+                id="employeePanel"
+                width="auto"
+                class="sapUiResponsive Margin sapUiNoContentPadding">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Employee ID: {Empid}" level="H2"/>
+                        <ToolbarSpacer/>
+                            <Button
+                                id="deleteUserButton"
+                                text="Delete"
+                                tooltip="Delete User"
+                                press=".onOpenDeleteDialog"/>
+                            <Button
+                                id="editUserButton"
+                                text="Edit"
+                                tooltip="Edit User"
+                                press=".onOpenEditDialog"/>
+                        <Link text="{i18n>FlipToResume}" tooltip="{i18n>FlipToResume.tooltip}" press=".onShowDetails"/>
+                    </Toolbar>
+                </headerToolbar>
+                <content>
+                    <f:SimpleForm
+                        minWdith="1024"
+                        editable="false"
+                        layout="ResponsiveGridLayout"
+                        labelSpanL="3" lableSpanM="3" emptySpanL="4" emptySpanM="4"
+                        columnsL="1" columnsM="1">
+                        <f:content>
+                            <Label text="First Name"/>
+                            <Text text="{FirstName}"/>
+                            <Label text="Last Name"/>
+                            <Text text="{LastName}"/>
+                            <Label text="Title"/>
+                            <Text text="{Title}"/>
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+        </semantic:headerContent>
+
+    </semantic:SemanticPage>
+
+</mvc:View>

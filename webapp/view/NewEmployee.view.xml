@@ -1,0 +1,48 @@
+<mvc:View
+    controllerName="employeeSkillsV4.empskillsv4.controller.NewEmployee"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+    <semantic:SemanticPage
+        id="employeeListPage"
+        class="sapUiResponsiveContentPadding"
+        showNavButton=".onNavBack">
+        <semantic:titleHeading>
+            <!-- <Title
+                text="Add New Employee"
+                level="H2"/> -->
+            
+        </semantic:titleHeading>
+            <layout:HorizontalLayout id="inputs" visible="true">
+                <layout:VerticalLayout>
+                    <f:SimpleForm id="employeeInputs">
+                        <f:content>
+                            <Label text="First Name" design="Bold"/>
+                            <Input id="FirstName" />
+                            <Label text="Last Name" design="Bold"/>
+                            <Input id="LastName" />
+                            <Label text="Title" design="Bold"/>
+                            <Input id="Title"/>
+                            <Label text="Department" design="Bold"/>
+                            <Input id="Department"/>
+                            <Label text="Email" design="Bold"/>
+                            <Input id="Email"/>
+                            <Label text="Address" design="Bold"/>
+                            <Input id="Address"/>
+                            <Label text="City" design="Bold"/>
+                            <Input id="City"/>
+                            <Label text="State" design="Bold"/>
+                            <Input id="State"/>
+                            <Label text="Zipcode" design="Bold"/>
+                            <Input id="Zipcode"/>
+                            <Label text="Country" design="Bold"/>
+                            <Input validue="Country"/>
+                        </f:content>
+                    </f:SimpleForm>
+                    <Button id="saveAction" text="Save" press="onSave" />
+                </layout:VerticalLayout>
+            </layout:HorizontalLayout>
+    </semantic:SemanticPage>
+</mvc:View>

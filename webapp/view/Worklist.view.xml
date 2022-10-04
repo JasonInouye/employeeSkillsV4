@@ -1,0 +1,81 @@
+<mvc:View
+    controllerName="employeeSkillsV4.empskillsv4.controller.Worklist"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false">
+
+        <semantic:titleHeading>
+            <Title
+                text="{i18n>worklistTitle}"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:content>
+            <Table
+                id="employeesTable"
+                width="auto"
+                items="{
+                    path: '/Employees',
+                    sorter: {
+                        path: 'Empid',
+                        descending: true
+                    }
+                }"
+                noDataText="{worklistView>/tableNoDataText}"
+                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+                growing="true"
+                growingScrollToLoad="true"
+                updateFinished=".onUpdateFinished">
+
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title
+                            id="tableHeader"
+                            text="{worklistView>/worklistTableTitle}"
+                            level="H3"/>
+                        <ToolbarSpacer />
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column id="fnameColumn">
+                        <Text text="{i18n>tableNameColumnFirstName}" id="nameColumnFirstName"/>
+                    </Column>
+                    <Column id="lnameColumn">
+                        <Text text="{i18n>tableNameColumnLastName}" id="nameColumnLastName"/>
+                    </Column>
+                    <Column id="emailColumn">
+                        <Text text="{i18n>tableNameColumnEmail}" id="nameColumnEmail"/>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem
+                        type="Navigation"
+                        press=".onPress">
+                        <cells>
+                            <ObjectIdentifier
+                                title="{FirstName}"/>
+                            <ObjectIdentifier
+                                title="{LastName}"/>
+                            <ObjectIdentifier
+                                title="{Email}"/>
+                            <ObjectNumber />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </semantic:content>
+
+        <semantic:titleCustomTextActions>
+            <Button text="Add Employee" press=".onAddEmployee"/>
+        </semantic:titleCustomTextActions>
+
+    </semantic:SemanticPage>
+
+</mvc:View>

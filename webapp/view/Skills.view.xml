@@ -1,0 +1,72 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:semantic="sap.f.semantic"
+    busyIndicatorDelay="0"
+    >
+    <semantic:SemanticPage
+        id="infopage"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false"
+        busy="{objectView>/busy}"
+        busyIndicatorDelay="{objectView>/delay}">
+
+        <semantic:headerContent>
+            <Panel
+                id="skillsPanel"
+                width="auto"
+                class="sapUiResponsive Margin sapUiNoContentPadding">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="{FirstName} {LastName}" level="H1"/>
+                    </Toolbar>
+                </headerToolbar>
+                <content>
+                    <f:SimpleForm
+                        minWdith="1024"
+                        editable="false"
+                        layout="ResponsiveGridLayout"
+                        labelSpanL="3" lableSpanM="3" emptySpanL="4" emptySpanM="4"
+                        columnsL="1" columnsM="1">
+                        <f:content>
+                            <Table                
+                            items="{path: '_EmpSkills',
+                                    parameters: {
+                                        expand: 'to_Skills'
+                                    }
+                            }">
+
+                                <columns>
+                                    <Column id="skillcolumn">
+                                        <Text text="Skill" id="skillcolumnname"/>
+                                    </Column>
+                                    <Column id="ratingcolumn">
+                                        <Text text="Rating" id="ratingcolumnname"/>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <ObjectIdentifier
+                                                title="{_Skills/SkillName}"/>
+
+                                            <!-- <ObjectIdentifier
+                                                title="{Rating}"/> -->
+
+                                            <RatingIndicator id="ratingID" maxValue="5" value="{Rating}" iconSize="16px" />
+
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+        </semantic:headerContent>
+
+    </semantic:SemanticPage>
+
+</mvc:View>

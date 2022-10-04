@@ -1,0 +1,60 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:layout="sap.ui.layout"
+    xmlns:semantic="sap.f.semantic"
+    busyIndicatorDelay="0"
+    >
+    <semantic:SemanticPage
+        id="infopage"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false"
+        busy="{objectView>/busy}"
+        busyIndicatorDelay="{objectView>/delay}">
+
+        <semantic:headerContent>
+            <layout:HorizontalLayout id="employeeDetails" visible="true">
+                <Avatar
+                    src="https://www.aceshowbiz.com/images/photo/bill_murray.jpg"
+                    displaySize="XL"
+                    showBorder="true"
+                    class="sapUiSmallMargin" />
+                <layout:VerticalLayout class="sapUiMediumMargin">
+                    <Label text="First Name:" design="Bold" class="sapUiSmallMarginBottom" />
+                    <Label text="Last Name:" design="Bold" class="sapUiSmallMarginBottom" />
+                    <Label text="Title:" design="Bold" class="sapUiSmallMarginBottom" />
+                    <Label text="Department:" design="Bold" class="sapUiSmallMarginBottom" />
+                    <Label text="Email:" design="Bold" class="sapUiSmallMarginBottom" />
+                </layout:VerticalLayout>
+                <layout:VerticalLayout class="sapUiMediumMargin">
+                    <Text text="{FirstName}" class="sapUiSmallMarginBottom" />
+                    <Text text="{LastName}" class="sapUiSmallMarginBottom" />
+                    <Text text="{Title}" class="sapUiSmallMarginBottom" />
+                    <Text text="{Department}" class="sapUiSmallMarginBottom" />
+                    <Text text="{Email}" class="sapUiSmallMarginBottom" />
+                </layout:VerticalLayout>
+            </layout:HorizontalLayout>
+            <layout:HorizontalLayout id="employeeAddress" visible="true">
+                <layout:VerticalLayout class="sapUiMediumMargin">
+                    <Label text="Address:" design="Bold" class="sapUiSmallMarginBottom" />
+                    <Label text="City:" design="Bold" class="sapUiSmallMarginBottom" />
+                    <Label text="State:" design="Bold" class="sapUiSmallMarginBottom" />
+                    <Label text="Country:" design="Bold" class="sapUiSmallMarginBottom" />
+                    <Label text="Zipcode:" design="Bold" class="sapUiSmallMarginBottom" />
+                </layout:VerticalLayout>
+                <layout:VerticalLayout class="sapUiMediumMargin">
+                    <Text text="{Address}" class="sapUiSmallMarginBottom" />
+                    <Text text="{City}" class="sapUiSmallMarginBottom" />
+                    <Text text="{State}" class="sapUiSmallMarginBottom" />
+                    <Text text="{Country}" class="sapUiSmallMarginBottom" />
+                    <Text text="{Zipcode}" class="sapUiSmallMarginBottom" />
+                </layout:VerticalLayout>
+            </layout:HorizontalLayout>
+
+        </semantic:headerContent>
+
+    </semantic:SemanticPage>
+
+</mvc:View>
